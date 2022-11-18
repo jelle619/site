@@ -37,7 +37,6 @@ function convertBook(book: BookFromCsv): BookCreate {
 }
 
 async function main() {
-  /*
   const csv = readFileSync("./books.csv").toString();
 
   const records: BookFromCsv[] = parse(csv, {
@@ -58,7 +57,6 @@ async function main() {
   });
 
   console.log(books);
-  */
 }
 
 await main()

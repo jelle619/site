@@ -14,9 +14,28 @@ model Book {
   id       String  @id @default(uuid())
   isbn     BigInt? @unique
   title    String
-  author   String
-  series   String
+  author   String?
+  series   String?
   entry    String?
   language String  // English | Dutch | German
-  version  String  // Physical | Digital | Audio
+  version  String  // physical | digital | audio
+}
+
+model Game {
+  id         String  @id @default(uuid())
+  title      String
+  title_id   String? // ID of the game, only aplies to console releases
+  platform   String // e.g. PC, Wii, Wii U, PlayStation 3, Nintendo DS
+  version    String // physical | digital
+  region     String? // e.g. Europe, North America, Australia, Japan
+}
+
+model Movie {
+  id          String  @id @default(uuid())
+  tmdb        BigInt? @unique // ID in The Movie Database, used for fetching missing info from their API
+  title       String
+  year        Int
+  description String?
+  version     String // Blu-ray, Blu-ray 3D, Ultra HD Blu-ray, DVD, VHS, digital
+  origin      String?
 }
